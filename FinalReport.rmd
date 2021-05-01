@@ -1,7 +1,7 @@
 ---
 title: "Covid91 vaccine study Final2021"
-author: "Put your name here!"
-date: "put the date here"
+author: "Thomas Matthews!"
+date: "May 1, 2021"
 output: 
   html_document:
     number_sections: true
@@ -16,7 +16,18 @@ require(forcats)
 OldData <-read.csv(file="covid91.csv",header=TRUE)
 #recode to remove the annoying "X" from the dataframe
 FinalData <- OldData %>% mutate(infected = recode(infected, aids = "covid", none = "OK" )) %>% select(-one_of("X"))
+
+#Now make all variables into factors the hard way(will figure easier way later) 
+#need to use purr to slickly change all variables to factor
+#Screw around with hash-tagging lines 29 and 30
+
+
+
 ```
+
+
+
+
 
 # Introduction
 
