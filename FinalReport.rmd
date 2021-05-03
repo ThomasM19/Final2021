@@ -20,16 +20,36 @@ FinalData <- OldData %>% mutate(infected = recode(infected, aids = "covid", none
 #Now make all variables into factors the hard way(will figure easier way later) 
 #need to use purr to slickly change all variables to factor
 #Screw around with hash-tagging lines 29 and 30
-
-
-
 ```
-
-
-
+```{r eval=FALSE}
+# this is the old way
+FinalData$treatment <- as.factor(FinalData$treatment)
+FinalData$sex <- as.factor(FinalData$sex)
+FinalData$infected  <- as.factor(FinalData$infected)
+FinalData$LGBTQ  <- as.factor(FinalData$LGBTQ)
+FinalData$DrugUser  <- as.factor(FinalData$DrugUser)
+```
+```{r }
+# this is the slick way
+FinalData= select(FinalData, ! is.numeric)
+FionalData=purrr::map(FinalData, as.factor)
+FinalData= data.frame(FinalData)
+```
+```{r}
+# see what happens here by unmasking line 40 and 41 or both - note it will fail if data not factor 
+#FinalData$treatment <- releve(FinalData$treatment,ref="placebo")
+#FinalData$infected <- releve(FinalData$infected,ref="none")
+```
 
 
 # Introduction
 
 A new  preventative vaccine (covid91) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups consisting of Males, Females, just the drug users, and just those in the LGBTQ community. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
+
+
+
+
+
+
+
 
