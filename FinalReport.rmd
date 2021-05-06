@@ -71,8 +71,16 @@ The chi squared table shows that the p-value of 0.0006181 is so small that it is
 $H_0$ The null hypothesis is given taking the vaccine there is no difference of whether males can contract covid-19 or not.
 $H_A$ The alternative hypthoesis is that the vaccine in fact does make a difference in whether or not a male contracts covid-19. Therefore we reject the null hypothesis. 
 
+The odds ratio from the Fisher Exact test is 1.47:1, when taking the odds ratio and computing it into a percent of effectiveness by using the formula O/(1+0)*100 you get 59.5% effectiveness. 
+
+Ultimately the vaccine is 40% effective in the male population which is absolutley ineffective. 
+
 
 # Females
+
+
+
+
 
 # LGBTQ
 
